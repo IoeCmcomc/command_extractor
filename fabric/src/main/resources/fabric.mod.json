@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "command_extractor",
+  "version": "${version}",
+  "name": "Command extractor",
+  "description": "A Minecraft mod to extract available server commands to a JSON file.",
+  "authors": [
+    "IoeCmcomc"
+  ],
+  "contact": {
+    "homepage": "https://github.com/IoeCmcomc/command_extractor",
+    "sources": "https://github.com/IoeCmcomc/command_extractor"
+  },
+  "license": "MIT License",
+  "icon": "assets/command_extractor/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "ioecmcomc.command_extractor.fabric.CommandExtractorFabric"
+    ]
+  },
+  "depends": {
+    "fabric": "*",
+    "minecraft": ">=1.19.4",
+    "architectury": ">=8.1.79"
+  }
+}

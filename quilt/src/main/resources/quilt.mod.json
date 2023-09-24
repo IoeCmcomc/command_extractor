@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "quilt_loader": {
+    "group": "${group}",
+    "id": "command_extractor",
+    "version": "${version}",
+    "name": "Command extractor",
+    "description": "A Minecraft mod to extract available server commands to a JSON file.",
+    "authors": ["IoeCmcomc"],
+    "contact": {
+      "sources": "https://github.com/IoeCmcomc/command_extractor"
+    },
+    "license": "MIT License",
+    "icon": "assets/command_extractor/icon.png",
+    "intermediate_mappings": "net.fabricmc:intermediary",
+    "environment": "*",
+    "entrypoints": {
+      "init": [
+        "ioecmcomc.command_extractor.quilt.CommandExtractorQuilt"
+      ]
+    },
+    "depends": [
+      {
+        "id": "quilt_loader",
+        "version": "*"
+      },
+      {
+        "id": "quilt_base",
+        "version": "*"
+      },
+      {
+        "id": "minecraft",
+        "version": ">=1.19.4"
+      },
+      {
+        "id": "architectury",
+        "version": ">=8.1.79"
+      }
+    ]
+  }
+}

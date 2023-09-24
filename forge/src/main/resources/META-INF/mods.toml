@@ -1,0 +1,35 @@
+modLoader = "javafml"
+loaderVersion = "[45,)"
+#issueTrackerURL = ""
+license = "MIT License"
+
+[[mods]]
+modId = "command_extractor"
+version = "${version}"
+displayName = "Command extractor"
+authors = "IoeCmcomc"
+description = '''
+A Minecraft mod to extract available server commands to a JSON file.
+'''
+#logoFile = ""
+
+[[dependencies.command_extractor]]
+modId = "forge"
+mandatory = true
+versionRange = "[45,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.command_extractor]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.19.4,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.command_extractor]]
+modId = "architectury"
+mandatory = true
+versionRange = "[8.1.79,)"
+ordering = "AFTER"
+side = "BOTH"
