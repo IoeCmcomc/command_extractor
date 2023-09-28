@@ -1,6 +1,6 @@
 # command_extractor
 
-***Command Extractor*** is a Minecraft mod to extract available server commands to a JSON file, using the same mechanism as the Minecraft built-in data generator.
+***Command Extractor*** is a Minecraft mod to extract available in-game commands to a JSON file, using the same mechanism as the Minecraft built-in data generator.
 
 This mod requires [Architectury API mod](https://modrinth.com/mod/architectury-api "Architectury API mod") to be installed. 
 
