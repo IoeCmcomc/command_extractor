@@ -10,15 +10,10 @@ import java.util.function.Supplier;
 import com.google.common.base.Suppliers;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.Command;
-import com.mojang.brigadier.tree.ArgumentCommandNode;
-import com.mojang.brigadier.tree.CommandNode;
-import com.mojang.brigadier.tree.LiteralCommandNode;
-import com.mojang.brigadier.tree.RootCommandNode;
 
 import dev.architectury.event.events.common.CommandRegistrationEvent;
 import dev.architectury.registry.registries.RegistrarManager;
@@ -77,32 +72,6 @@ public class CommandExtractor {
             e.printStackTrace();
             return 0;
         }
-    }
-
-    // Unfinised and unused
-    private static <S> JsonObject nodeToJson(CommandNode<S> node) {
-        JsonObject obj = new JsonObject();
-        CommandNode<S> redirect = node.getRedirect();
-        if (redirect != null) {
-            JsonArray arr = new JsonArray(1);
-            arr.add(node.getName());
-            obj.add("redirect", arr);
-        }
-        if (node.getCommand() != null) {
-            obj.addProperty("executable", true);
-        }
-        if (node instanceof RootCommandNode) {
-            obj.addProperty("type", "root");
-        } else {
-            for (CommandNode<S> child : node.getChildren()) {
-                obj.add(child.getName(), nodeToJson(child));
-            }
-            obj.addProperty("type", (node instanceof LiteralCommandNode) ? "literal" : "argument");
-            if (node instanceof ArgumentCommandNode argNode) {
-                obj.addProperty("parser", argNode.getType().toString());
-            }
-        }
-        return obj;
     }
 
     private static void sendSystemMessage(CommandContext<CommandSourceStack> ctx, String message) {
