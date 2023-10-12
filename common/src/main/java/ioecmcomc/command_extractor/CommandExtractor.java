@@ -31,22 +31,18 @@ public class CommandExtractor {
     public static final String MOD_ID = "command_extractor";
     // We can use this if we don't want to use DeferredRegister
     public static final Supplier<RegistrarManager> REGISTRIES = Suppliers.memoize(() -> RegistrarManager.get(MOD_ID));
-    
+
     public static void init() {
         CommandRegistrationEvent.EVENT.register((dispatcher, registry, selection) -> {
             dispatcher.register(
-                literal("commandextractor")
-                    .then(literal("extract")
+                    literal("cmdextr")
+                            .then(literal("all")
+                                    .executes(ctx -> {
+                                        return extractCommands(ctx, true);
+                                    }))
                             .executes(ctx -> {
-                                return extractCommands(ctx);
-                            })
-                    )
-            );
-            dispatcher.register(
-                literal("cmdextr").executes(ctx -> {
-                    return extractCommands(ctx);
-                })
-            );
+                                return extractCommands(ctx, false);
+                            }));
         });
 
         System.out.println(PlatformSpecific.getConfigDirectory().toAbsolutePath().normalize().toString());
@@ -56,21 +52,23 @@ public class CommandExtractor {
      * Extract currently avaliable commands from the game to a file.
      * 
      * @param ctx the command context
-     * @return 0 if succeed, 1 if failed
+     * @param keepAll whether to keep the "cmdextr" command in the output file
+     * @return 0 if succeeded, 1 if failed
      */
-    private static int extractCommands(CommandContext<CommandSourceStack> ctx) {
+    private static int extractCommands(CommandContext<CommandSourceStack> ctx, boolean keepAll) {
         sendSystemMessage(ctx, "Extracting commands...");
         
         Commands commands = ctx.getSource().getServer().getCommands();
         CommandDispatcher<CommandSourceStack> disp = commands.getDispatcher();
         
-        // String path = PlatformSpecific.getConfigDirectory().resolve("extracted_commands.json").toString();
         String path = java.nio.file.Path.of("./extracted/commands.json", "").toAbsolutePath().normalize().toString();
         new File("extracted").mkdir();
         try (FileWriter writer = new FileWriter(path)){
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
-		    // gson.toJson(nodeToJson(disp.getRoot()), gson.newJsonWriter(writer));
             JsonObject obj = ArgumentUtils.serializeNodeToJson(disp, disp.getRoot());
+            if (!keepAll) {
+                obj.get("children").getAsJsonObject().remove("cmdextr");
+            }
             gson.toJson(obj, gson.newJsonWriter(writer));
             sendSystemMessage(ctx, "Extracted commands to '" + path + "'");
             return Command.SINGLE_SUCCESS;
@@ -96,7 +94,7 @@ public class CommandExtractor {
         if (node instanceof RootCommandNode) {
             obj.addProperty("type", "root");
         } else {
-            for (CommandNode<S> child: node.getChildren()) {
+            for (CommandNode<S> child : node.getChildren()) {
                 obj.add(child.getName(), nodeToJson(child));
             }
             obj.addProperty("type", (node instanceof LiteralCommandNode) ? "literal" : "argument");
