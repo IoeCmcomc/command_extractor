@@ -8,11 +8,11 @@
     "IoeCmcomc"
   ],
   "contact": {
-    "homepage": "https://github.com/IoeCmcomc/command_extractor",
+    "issues": "https://github.com/IoeCmcomc/command_extractor/issues",
     "sources": "https://github.com/IoeCmcomc/command_extractor"
   },
   "license": "MIT License",
-  "icon": "assets/command_extractor/icon.png",
+  "icon": "command_extractor_icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -23,5 +23,12 @@
     "fabric": "*",
     "minecraft": ">=1.19.4",
     "architectury": ">=8.1.79"
+  },
+  "custom": {
+    "catalogue": {
+      "icon": {
+        "image": "command_extractor_icon.png"
+      }
+    }
   }
 }

@@ -4,14 +4,19 @@
     "group": "${group}",
     "id": "command_extractor",
     "version": "${version}",
-    "name": "Command extractor",
-    "description": "A Minecraft mod to extract available server commands to a JSON file.",
-    "authors": ["IoeCmcomc"],
-    "contact": {
-      "sources": "https://github.com/IoeCmcomc/command_extractor"
+    "metadata": {
+      "name": "Command extractor",
+      "description": "A Minecraft mod to extract available server commands to a JSON file.",
+      "authors": [
+        "IoeCmcomc"
+      ],
+      "contact": {
+        "issues": "https://github.com/IoeCmcomc/command_extractor/issues",
+        "sources": "https://github.com/IoeCmcomc/command_extractor"
+      },
+      "license": "MIT",
+      "icon": "command_extractor_icon.png"
     },
-    "license": "MIT License",
-    "icon": "assets/command_extractor/icon.png",
     "intermediate_mappings": "net.fabricmc:intermediary",
     "environment": "*",
     "entrypoints": {
