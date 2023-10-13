@@ -8,6 +8,8 @@ This mod currently only support Minecraft 1.19.4, tested on Forge and Fabric.
 
 ## Usage
 
-Run `/cmdextr` or `/commandextractor extract` command inside the game to extract commands.
+Run `/cmdextr` command inside the game to extract commands.
 
 The extracted JSON command tree file will be saved into `extracted/commands.json` in the game folder.
+
+By default, the `cmdextr` command itself is not included in the output file unless `/cmdextr all` is used.
