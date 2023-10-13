@@ -4,7 +4,7 @@
 
 This mod requires [Architectury API mod](https://modrinth.com/mod/architectury-api "Architectury API mod") to be installed. 
 
-This mod currently only support Minecraft 1.19.4, tested on Forge and Fabric.
+This mod currently only support Minecraft 1.19.4, tested on Forge, Quilt and Fabric.
 
 ## Usage
 
