@@ -16,7 +16,8 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.Command;
 
 import dev.architectury.event.events.common.CommandRegistrationEvent;
-import dev.architectury.registry.registries.RegistrarManager;
+// import dev.architectury.registry.registries.RegistrarManager;
+import dev.architectury.registry.registries.Registries;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.synchronization.ArgumentUtils;
@@ -25,7 +26,8 @@ import net.minecraft.network.chat.Component;
 public class CommandExtractor {
     public static final String MOD_ID = "command_extractor";
     // We can use this if we don't want to use DeferredRegister
-    public static final Supplier<RegistrarManager> REGISTRIES = Suppliers.memoize(() -> RegistrarManager.get(MOD_ID));
+    // public static final Supplier<RegistrarManager> REGISTRIES = Suppliers.memoize(() -> RegistrarManager.get(MOD_ID));
+    public static final Supplier<Registries> REGISTRIES = Suppliers.memoize(() -> Registries.get(MOD_ID));
 
     public static void init() {
         CommandRegistrationEvent.EVENT.register((dispatcher, registry, selection) -> {

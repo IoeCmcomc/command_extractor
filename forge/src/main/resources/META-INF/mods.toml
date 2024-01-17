@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[45,)"
+loaderVersion = "[43,)"
 issueTrackerURL = "https://github.com/IoeCmcomc/command_extractor/issues"
 license = "MIT License"
 
@@ -17,21 +17,21 @@ displayURL = "https://github.com/IoeCmcomc/command_extractor"
 [[dependencies.command_extractor]]
 modId = "forge"
 mandatory = true
-versionRange = "[45,)"
+versionRange = "[43,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.command_extractor]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.19.4,)"
+versionRange = "[1.19.2,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.command_extractor]]
 modId = "architectury"
 mandatory = true
-versionRange = "[8.1.79,)"
+versionRange = "[6.5.77,)"
 ordering = "AFTER"
 side = "BOTH"
 
