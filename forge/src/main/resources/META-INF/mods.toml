@@ -17,21 +17,21 @@ displayURL = "https://github.com/IoeCmcomc/command_extractor"
 [[dependencies.command_extractor]]
 modId = "forge"
 mandatory = true
-versionRange = "[47,)"
+versionRange = "[49,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.command_extractor]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.20.1,)"
+versionRange = "[1.20.4,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.command_extractor]]
 modId = "architectury"
 mandatory = true
-versionRange = "[9.1.12,)"
+versionRange = "[11.1.17,)"
 ordering = "AFTER"
 side = "BOTH"
 
