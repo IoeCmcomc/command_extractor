@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[47,)"
+loaderVersion = "[4,)"
 issueTrackerURL = "https://github.com/IoeCmcomc/command_extractor/issues"
 license = "MIT License"
 
@@ -38,5 +38,5 @@ side = "BOTH"
 [modproperties.command_extractor]
    catalogueImageIcon="command_extractor_icon.png"
 
-[[mixins]]
-config = "command_extractor.mixins.json"
+# [[mixins]]
+# config = "command_extractor.mixins.json"
