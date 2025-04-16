@@ -1,7 +1,7 @@
-package ioecmcomc.command_extractor.forge;
+package ioecmcomc.command_extractor.neoforge;
 
 import ioecmcomc.command_extractor.PlatformSpecific;
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import java.nio.file.Path;
 
